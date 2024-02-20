@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono, Roboto_Mono } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import './globals.css'
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -8,8 +8,8 @@ import Banner from "@/components/banner";
 const font = Roboto_Mono({ subsets: ['cyrillic'] })
 
 export const metadata: Metadata = {
-  title: "Donal Noye's Portfolio",
-  description: 'Portfolio Frontend Developer',
+  title: "Donal Noye",
+  description: 'Frontend Developer Portfolio',
 }
 
 export default function RootLayout({
@@ -26,13 +26,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="h-full text-black dark:bg-black dark:text-white tracking-[-0.08px] leading-6">
-            <Banner />
-            <Header />
-            <main className="h-full dark:bg-black">
+          <Banner />
+          <Header />
+          <main className="py-32">
+            <div className="max-w-[794px]	md:mx-auto">
               {children}
-            </main>
-          </div>
+            </div>
+          </main>
         </ThemeProvider>
       </body>
     </html>
